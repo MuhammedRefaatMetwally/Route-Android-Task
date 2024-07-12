@@ -51,10 +51,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
-    // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-
+    //flow
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.androidx.material)
     // Glide
     implementation(libs.glide)
 
@@ -66,9 +65,6 @@ dependencies {
 
     // Rounded ImageView
     implementation(libs.roundedimageview)
-
-    // Interceptor
-    implementation(libs.logging.interceptor)
 
     // RecyclerView
     implementation(libs.androidx.recyclerview)

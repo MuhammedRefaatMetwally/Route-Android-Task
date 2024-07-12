@@ -1,0 +1,3 @@
+package com.example.data.api
+
+private const val SECRET ="sk_test_51Ow3KlRsJ1oPTnGIdqzmjns9YW6Um1aphHt1Q9Vj1OMyHdMb3Dmz05GfxLWhQM09MjCYQx9tz0qTrWcE0460JcUq00Kwxt0A7W"
