@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "route-task"
 include(":app")
- 
+include(":domain")
+include(":data")
