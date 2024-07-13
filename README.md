@@ -16,7 +16,7 @@ This project is an Android application that displays a list of products. The app
 
 ## Architecture
 
-This project follows Clean Architecture, which separates the code into different layers:
+This project follows Clean Architecture, which separates the code into different layers which includes Repository Pattern and MVVM:
 
 1. **Domain Layer**: Contains business logic and use cases.
 2. **Data Layer**: Handles data operations, including network calls and data caching.
@@ -48,7 +48,7 @@ To run this project, follow these steps:
 2. **Open the project in Android Studio:**
 
     ```sh
-    open -a "Android Studio" .
+    open -a "Android Studio".
     ```
 
 3. **Sync the project with Gradle files** by clicking on the `Sync Now` button in the banner at the top of the IDE.
