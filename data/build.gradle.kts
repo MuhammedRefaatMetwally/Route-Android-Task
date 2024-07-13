@@ -40,13 +40,17 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    //prefs store
+    implementation (libs.androidx.datastore.preferences)
     //Hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.navigation.fragment)
     implementation(project(":domain"))
     kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
-
+   //paging
+    implementation(libs.androidx.paging.common.android)
+    implementation (libs.androidx.paging.runtime.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat.v161)
     implementation(libs.material)
