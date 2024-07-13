@@ -86,7 +86,7 @@ The project includes unit tests for the ViewModel and use cases.
 ![Screenshot 2024-07-12 210936](https://github.com/user-attachments/assets/93b6cf8d-ba29-40a9-b653-9a3ef4c0f737)
 
 ## ProductsList:
-![Screenshot 2024-07-13 141408](https://github.com/user-attachments/assets/add0aa9f-ca6c-4ffd-94ce-d7d05bfc0871)
+![Screenshot 2024-07-13 173718](https://github.com/user-attachments/assets/a7a21ad2-50f4-4ef1-b235-4e473a702423)
 
 
 ## Video:
