@@ -22,7 +22,6 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductsViewModel @Inject constructor(
     private val getProductsUseCase: GetProductsUseCase
-
 ) : ViewModel() {
     val shouldShowLoading = MutableLiveData<Boolean>()
     val shouldShowError = MutableLiveData<Boolean>()

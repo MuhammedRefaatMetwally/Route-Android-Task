@@ -12,6 +12,4 @@ class GetProductsUseCase @Inject constructor(
     suspend fun invoke(): ProductsEntity {
         return repository.getProducts()
     }
-
-
 }
