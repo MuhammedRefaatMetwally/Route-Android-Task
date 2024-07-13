@@ -4,21 +4,22 @@ package com.example.route_task.core.utils
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import com.example.route_task.R
 import com.google.android.material.textfield.TextInputLayout
+import com.squareup.picasso.Picasso
 
 class BindingAdapters {
     companion object {
-        /*@BindingAdapter("app:urlCircular")
+        @BindingAdapter("app:urlCircular")
         @JvmStatic
         fun bindImageCircular(imageView: ImageView, url: String?) {
             Picasso.get()
                 .load(url)
                 .placeholder(R.drawable.ic_category_placeholder)
-                .transform(TransformCircular())
                 .into(imageView)
-        }*/
+        }
 
-      /*  @BindingAdapter("app:url")
+        @BindingAdapter("app:url")
         @JvmStatic
         fun bindImage(imageView: ImageView, url: String?) {
             Picasso.get()
@@ -27,7 +28,6 @@ class BindingAdapters {
                 .fit()
                 .into(imageView)
         }
-*/
     }
 }
 @BindingAdapter("app:Error")

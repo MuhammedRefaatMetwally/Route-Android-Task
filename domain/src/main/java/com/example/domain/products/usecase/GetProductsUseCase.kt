@@ -9,8 +9,8 @@ import javax.inject.Inject
 class GetProductsUseCase @Inject constructor(
     private val repository: ProductsRepository
 ) {
-    suspend fun invoke(categoryId: String? = null): Flow<ResultWrapper<List<ProductsEntity?>?>> {
-        return repository.getProducts(categoryId)
+    suspend fun invoke(): ProductsEntity {
+        return repository.getProducts()
     }
 
 

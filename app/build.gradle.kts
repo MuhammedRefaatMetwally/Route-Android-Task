@@ -47,7 +47,8 @@ dependencies {
     implementation(libs.androidx.appcompat.v161)
     implementation(libs.material.v150)
     implementation(libs.androidx.constraintlayout)
-
+    implementation(project(":data"))
+    implementation(project(":domain"))
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
@@ -65,6 +66,14 @@ dependencies {
 
     // Rounded ImageView
     implementation(libs.roundedimageview)
+    implementation(libs.squareup.picasso)
+    //retrofit
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    //prefs store
+    implementation (libs.androidx.datastore.preferences)
 
     // RecyclerView
     implementation(libs.androidx.recyclerview)
@@ -86,7 +95,15 @@ dependencies {
 
     //glide
     implementation(libs.glide)
-
+    //fragment
+    implementation (libs.androidx.appcompat.v131)
+    implementation (libs.androidx.fragment)
+    implementation (libs.androidx.constraintlayout.v210)
+    implementation (libs.material.v140)
+    implementation (libs.androidx.databinding.runtime)
+    implementation(libs.androidx.navigation.fragment)
+    implementation (libs.androidx.appcompat)
+    implementation (libs.androidx.fragment.ktx)
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
