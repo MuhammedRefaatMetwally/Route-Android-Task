@@ -35,13 +35,11 @@ object ApiModule {
     fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor,
     tokenInterceptor: TokenInterceptor,
     authInterceptor: AuthInterceptor,
-    authAuthenticator: AuthAuthenticator,
                             ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .addInterceptor(tokenInterceptor)
             .addInterceptor(authInterceptor)
-            .authenticator(authAuthenticator)
             .build()
     }
 

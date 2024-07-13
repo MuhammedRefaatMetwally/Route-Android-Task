@@ -1,35 +1,38 @@
-/*
-package com.example.routee_commerce.ui.home.fragments.productList.adapter
+package com.example.route_task.features.products.adapter
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.example.route_task.features.home.products.Product
-import com.example.routee_commerce.databinding.ItemProductBinding
-import com.example.routee_commerce.model.Product
+import com.example.data.model.ProductsItem
+import com.example.domain.products.model.ProductsItemEntity
+import com.example.route_task.databinding.ItemProductBinding
+import kotlin.math.round
 
-class ProductsAdapter(private var products: List<Product?>? = null) :
+class ProductsAdapter(private var products: List<ProductsItemEntity?>? = null) :
     RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val itemProductBinding: ItemProductBinding) :
+    inner class ViewHolder(var itemProductBinding: ItemProductBinding) :
         RecyclerView.ViewHolder(itemProductBinding.root) {
 
-        fun bind(product: Product?) {
+        @SuppressLint("SetTextI18n")
+        fun bind(product: ProductsItemEntity?) {
             itemProductBinding.product = product
             itemProductBinding.executePendingBindings()
-            if (product?.priceAfterDiscount != null) {
-                itemProductBinding.productPrice.text = "EGP ${product?.priceAfterDiscount}"
+            if (product?.discountPercentage != null) {
+               val  original_price = product.price?.div((1 - (product.discountPercentage!! / 100)))
+                itemProductBinding.productPrice.text = "EGP ${original_price?.let { round(it) }}"
                 itemProductBinding.productOldPrice.isVisible = true
-                itemProductBinding.productOldPrice.text = "EGP ${product?.price}"
+                itemProductBinding.productOldPrice.text = "EGP ${product.price}"
                 itemProductBinding.productOldPrice.paintFlags =
                     itemProductBinding.productOldPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             } else {
                 itemProductBinding.productPrice.text = "EGP ${product?.price}"
                 itemProductBinding.productOldPrice.isVisible = false
             }
-            itemProductBinding.reviewValueTv.text = "(${product?.ratingsAverage})"
+            itemProductBinding.reviewValueTv.text = "(${product?.rating})"
         }
     }
 
@@ -60,13 +63,13 @@ class ProductsAdapter(private var products: List<Product?>? = null) :
         }
     }
 
-    fun bindProducts(products: List<Product?>) {
+    @SuppressLint("NotifyDataSetChanged")
+    fun bindProducts(products: List<ProductsItemEntity?>) {
         this.products = products
         notifyDataSetChanged()
     }
 
-    var addProductToWishListClicked: ((product: Product) -> Unit)? = null
-    var addProductToCartClicked: ((product: Product) -> Unit)? = null
+    var addProductToWishListClicked: ((product: ProductsItemEntity) -> Unit)? = null
+    var addProductToCartClicked: ((product: ProductsItemEntity) -> Unit)? = null
 
 }
-*/

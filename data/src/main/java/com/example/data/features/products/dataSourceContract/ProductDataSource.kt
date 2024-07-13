@@ -1,12 +1,11 @@
 package com.example.data.features.products.dataSourceContract
 
-import androidx.paging.PagingData
+import com.example.data.model.ProductsResponse
 import com.example.domain.common.ResultWrapper
+import com.example.domain.products.model.ProductsEntity
 import kotlinx.coroutines.flow.Flow
 
 interface ProductDataSource {
-    suspend fun getProducts(categoryId: String? = null): Flow<ResultWrapper<List<Product?>?>>
-    suspend fun getProductsPaging(categoryId: String? = null): Flow<PagingData<Product>>
-    suspend fun getSpecificProduct(productId:String):Flow<ResultWrapper<Product>>
-
+    suspend fun getProducts(): ProductsResponse
+   // suspend fun getProductsPaging(categoryId: String? = null): Flow<PagingData<ProductsEntity>>
 }

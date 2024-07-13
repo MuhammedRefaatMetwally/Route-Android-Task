@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
+        <variable
+            name="product"
+            type="com.example.domain.products.model.ProductsItemEntity" />
+
+    </data>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,22 +30,40 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:url="@{product.component1()[0]}"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/product_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:lines="1"
                 android:maxLines="1"
-                android:text=""
+                android:text="@{product.title}"
                 android:textColor="@color/desc_dark_blue"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/product_img" />
+            <TextView
+                android:id="@+id/product_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{product.description}"
+                android:textColor="@color/desc_dark_blue"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_name" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/add_to_wishlist_btn"
@@ -70,19 +94,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/egp_1_200"
                 android:textColor="@color/desc_dark_blue"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@id/product_name"
-                app:layout_constraintTop_toBottomOf="@id/product_name" />
+                app:layout_constraintStart_toStartOf="@id/product_desc"
+                app:layout_constraintTop_toBottomOf="@id/product_desc" />
 
             <TextView
                 android:id="@+id/product_old_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/egp_1_500"
                 android:textColor="@color/pale_blue"
                 android:textSize="11sp"
@@ -94,8 +118,8 @@
                 android:id="@+id/review_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_regular"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/review"
                 android:textColor="@color/desc_dark_blue"
                 android:textSize="14sp"
@@ -107,8 +131,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_regular"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/desc_dark_blue"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/review_tv"
@@ -119,6 +143,7 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_marginStart="5dp"
+                android:contentDescription="@string/star"
                 android:paddingTop="3dp"
                 android:src="@drawable/ic_star"
                 app:layout_constraintStart_toEndOf="@id/review_value_tv"
@@ -128,8 +153,7 @@
                 android:id="@+id/add_to_cart_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="8dp"
                 android:src="@drawable/plus_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
