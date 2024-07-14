@@ -1,4 +1,4 @@
-package com.example.route_task.features.products
+package com.example.route_task.features.products.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.route_task.core.utils.ViewError
 import com.example.route_task.core.utils.showMessage
 import com.example.route_task.databinding.FragmentProductsBinding
-import com.example.route_task.features.products.adapter.ProductsAdapter
+import com.example.route_task.features.products.fragment.adapter.ProductsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProductsFragment : Fragment() {

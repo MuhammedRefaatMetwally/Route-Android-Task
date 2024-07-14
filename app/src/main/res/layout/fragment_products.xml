@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.example.route_task.features.products.ProductsViewModel" />
+            type="com.example.route_task.features.products.fragment.ProductsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.example.route_task.R
 import com.example.route_task.databinding.ActivityProductsBinding
+import com.example.route_task.features.products.fragment.ProductsFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

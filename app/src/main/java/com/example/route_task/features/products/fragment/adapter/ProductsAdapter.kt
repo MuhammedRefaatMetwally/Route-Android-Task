@@ -1,4 +1,4 @@
-package com.example.route_task.features.products.adapter
+package com.example.route_task.features.products.fragment.adapter
 
 import android.annotation.SuppressLint
 import android.graphics.Paint
