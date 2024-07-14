@@ -11,6 +11,7 @@ import com.example.domain.products.usecase.GetProductsUseCase
 import com.example.route_task.core.utils.ViewError
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
@@ -29,7 +30,7 @@ class ProductsViewModel @Inject constructor(
     val errorLiveData = MutableLiveData<ViewError>()
 
     fun getProducts() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             shouldShowLoading.postValue(true)
             shouldShowError.postValue(false)
             try {
