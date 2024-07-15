@@ -13,6 +13,6 @@ class ProductsRepositoryImpl @Inject constructor(
     private  val dataSource: ProductDataSource,
 ) : ProductsRepository {
     override suspend fun getProducts(): ProductsEntity {
-        return dataSource.getProducts().toEntity()
+        return dataSource.getProducts()
     }
 }

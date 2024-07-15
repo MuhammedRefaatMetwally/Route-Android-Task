@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.route_task.core.utils.ViewError
 import com.example.route_task.core.utils.showMessage
 import com.example.route_task.databinding.FragmentProductsBinding
@@ -14,19 +15,22 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProductsFragment : Fragment() {
 
-    private lateinit var binding: FragmentProductsBinding
+
     private val productsAdapter = ProductsAdapter()
-    private val viewModel: ProductsViewModel by viewModels()
+    private lateinit var viewModel: ProductsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel  = ViewModelProvider(this)[ProductsViewModel::class.java]
     }
 
+    private  var _viewbinding: FragmentProductsBinding? = null
+    private val binding get() = _viewbinding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentProductsBinding.inflate(inflater, container, false)
+    ): View {
+        _viewbinding = FragmentProductsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -35,7 +39,6 @@ class ProductsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initObservers()
-        viewModel.getProducts()
     }
 
     private fun initViews() {
@@ -48,7 +51,7 @@ class ProductsFragment : Fragment() {
     private fun initObservers() {
         viewModel.productsLiveData.observe(viewLifecycleOwner) { products ->
             products?.let {
-                productsAdapter.bindProducts(it)
+                productsAdapter.updateProducts(it)
             }
         }
 
@@ -70,5 +73,10 @@ class ProductsFragment : Fragment() {
                 dialog.dismiss()
             }
         )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _viewbinding = null
     }
 }

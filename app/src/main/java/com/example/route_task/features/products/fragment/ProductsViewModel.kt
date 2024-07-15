@@ -27,6 +27,10 @@ class ProductsViewModel @Inject constructor(
     val productsLiveData = MutableLiveData<List<ProductsItemEntity?>?>()
     val errorLiveData = MutableLiveData<ViewError>()
 
+    init {
+        getProducts()
+    }
+
     fun getProducts() {
         viewModelScope.launch(Dispatchers.IO) {
             shouldShowLoading.postValue(true)
