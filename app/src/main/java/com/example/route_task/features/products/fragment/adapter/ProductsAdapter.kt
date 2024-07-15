@@ -5,13 +5,13 @@ import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.data.model.ProductsItem
 import com.example.domain.products.model.ProductsItemEntity
 import com.example.route_task.databinding.ItemProductBinding
 import kotlin.math.round
 
-class ProductsAdapter(private var products: List<ProductsItemEntity?>? = null) :
+class ProductsAdapter(private var products: List<ProductsItemEntity?> = emptyList()) :
     RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
 
     inner class ViewHolder(var itemProductBinding: ItemProductBinding) :
@@ -22,8 +22,8 @@ class ProductsAdapter(private var products: List<ProductsItemEntity?>? = null) :
             itemProductBinding.product = product
             itemProductBinding.executePendingBindings()
             if (product?.discountPercentage != null) {
-               val  original_price = product.price?.div((1 - (product.discountPercentage!! / 100)))
-                itemProductBinding.productPrice.text = "EGP ${original_price?.let { round(it) }}"
+                val originalPrice = product.price?.div((1 - (product.discountPercentage!! / 100)))
+                itemProductBinding.productPrice.text = "EGP ${originalPrice?.let { round(it) }}"
                 itemProductBinding.productOldPrice.isVisible = true
                 itemProductBinding.productOldPrice.text = "EGP ${product.price}"
                 itemProductBinding.productOldPrice.paintFlags =
@@ -46,10 +46,10 @@ class ProductsAdapter(private var products: List<ProductsItemEntity?>? = null) :
         )
     }
 
-    override fun getItemCount() = products?.size ?: 0
+    override fun getItemCount() = products.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val product = products!![position]
+        val product = products[position]
         holder.bind(product)
         addProductToWishListClicked?.let {
             holder.itemProductBinding.addToWishlistBtn.setOnClickListener {
@@ -63,13 +63,13 @@ class ProductsAdapter(private var products: List<ProductsItemEntity?>? = null) :
         }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun bindProducts(products: List<ProductsItemEntity?>) {
-        this.products = products
-        notifyDataSetChanged()
+    fun updateProducts(newProducts: List<ProductsItemEntity?>) {
+        val diffCallback = ProductDiffCallback(products, newProducts)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        products = newProducts
+        diffResult.dispatchUpdatesTo(this)
     }
 
     var addProductToWishListClicked: ((product: ProductsItemEntity) -> Unit)? = null
     var addProductToCartClicked: ((product: ProductsItemEntity) -> Unit)? = null
-
 }

@@ -6,6 +6,5 @@ import com.example.domain.products.model.ProductsEntity
 import kotlinx.coroutines.flow.Flow
 
 interface ProductDataSource {
-    suspend fun getProducts(): ProductsResponse
-   // suspend fun getProductsPaging(categoryId: String? = null): Flow<PagingData<ProductsEntity>>
+    suspend fun getProducts(): ProductsEntity
 }
