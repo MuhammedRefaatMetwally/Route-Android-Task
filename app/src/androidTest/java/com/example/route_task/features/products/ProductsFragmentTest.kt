@@ -15,6 +15,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
+import com.example.route_task.features.products.fragment.ProductsFragment
 
 @HiltAndroidTest
 @RunWith(AndroidJUnit4::class)

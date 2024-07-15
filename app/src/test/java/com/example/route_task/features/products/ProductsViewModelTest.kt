@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.domain.products.model.ProductsEntity
 import com.example.domain.products.model.ProductsItemEntity
 import com.example.domain.products.usecase.GetProductsUseCase
+import com.example.route_task.features.products.fragment.ProductsViewModel
 import com.example.route_task.utils.getOrAwaitValueTest
 import io.mockk.coEvery
 import io.mockk.coVerify

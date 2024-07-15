@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="9"
-    android:paddingHorizontal="8dp">
+    android:paddingHorizontal="@dimen/medium_margin">
 
 
     <EditText
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/searchBar"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/constrain_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_18"
+        android:layout_marginTop="@dimen/medium_margin"
         android:hint="@string/what_do_you_search_for"
         android:textColorHint="@color/desc_dark_blue"
         android:drawableStart="@drawable/ic_search"
@@ -29,11 +29,11 @@
 
     <ImageView
         android:id="@+id/cartIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/size30"
+        android:layout_height="@dimen/size30"
         android:layout_gravity="center"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/extra_margin"
+        android:layout_marginTop="@dimen/extra_margin"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_weight="1"
         android:contentDescription="@string/cartIcon"

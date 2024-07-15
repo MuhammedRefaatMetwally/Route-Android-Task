@@ -1,11 +1,9 @@
-package com.example.route_task.features.products
+package com.example.route_task.features.products.fragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.data.model.ProductsItem
 import com.example.data.model.ProductsResponse
-import com.example.domain.products.model.ProductsEntity
 import com.example.domain.products.model.ProductsItemEntity
 import com.example.domain.products.usecase.GetProductsUseCase
 import com.example.route_task.core.utils.ViewError
