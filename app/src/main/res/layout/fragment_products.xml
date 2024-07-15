@@ -19,15 +19,15 @@
             android:id="@+id/products"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="@dimen/margin_40">
 
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/products_shimmer_view_container"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/constrain_dimen"
                 android:visibility="@{vm.shouldShowLoading ? View.VISIBLE : View.GONE}"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/margin_20"
                 android:orientation="horizontal"
                 app:duration="800"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -74,8 +74,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/success_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/constrain_dimen"
+                android:layout_marginTop="@dimen/margin_20"
                 android:visibility="@{vm.shouldShowLoading ? View.GONE : View.VISIBLE}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -83,10 +83,10 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/category_products_rv"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="@dimen/constrain_dimen"
+                    android:layout_marginHorizontal="@dimen/medium_margin"
                     android:orientation="vertical"
-                    android:paddingBottom="62dp"
+                    android:paddingBottom="@dimen/padding_62"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -97,8 +97,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/error_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/constrain_dimen"
+                android:layout_marginTop="@dimen/margin_20"
                 android:visibility="@{vm.shouldShowError ? View.VISIBLE : View.GONE}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -111,15 +111,15 @@
                     android:gravity="center"
                     android:text="@string/something_went_wrong"
                     android:textColor="@color/main_text_color"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/textSize_14"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/try_again_btn"
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="@dimen/width_120"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_marginTop="@dimen/medium_margin"
                     android:background="@drawable/button_bg"
                     android:text="@string/try_again"
                     app:layout_constraintEnd_toEndOf="parent"

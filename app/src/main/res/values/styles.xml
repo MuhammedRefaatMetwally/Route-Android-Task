@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text Styles -->
+    <style name="TextView.Base">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/main_text_color</item>
+    </style>
+
+    <style name="TextView.Title" parent="TextView.Base">
+        <item name="android:textSize">@dimen/textSize_14</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextView.Description" parent="TextView.Base">
+        <item name="android:textSize">@dimen/textSize_14</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.Price" parent="TextView.Base">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextView.OldPrice" parent="TextView.Base">
+        <item name="android:textSize">@dimen/textSize_11</item>
+        <item name="android:textColor">@color/pale_blue</item>
+    </style>
+
+    <style name="TextView.Review" parent="TextView.Base">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextView.ReviewValue" parent="TextView.Base">
+        <item name="android:textSize">@dimen/textSize_14</item>
+    </style>
+
+    <!-- CardView Style -->
+    <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/margin_20</item>
+        <item name="strokeColor">@color/stroke_color</item>
+    </style>
+
+    <style name="TextView"/>
+
+</resources>
