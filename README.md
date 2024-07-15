@@ -12,7 +12,7 @@ This project is an Android application that displays a list of products. The app
 - [Unit Testing](#unit-testing)
 - [Video](#video)
 - [Contributing](#contributing)
-- [License](#license)
+- [Contacts](#contacts)
 
 ## Architecture
 
@@ -96,9 +96,10 @@ https://github.com/user-attachments/assets/0117aa5b-6349-4d2b-8ab0-5f1dfb0e451c
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
-
 1. Fork the repository.
 2. Create a new branch with a descriptive name.
 3. Make your changes.
 4. Submit a pull request.
 
+## Contacts
+You are welcome to contact me and send your feedback to my gmail: muhammedrefaat2020@gmail.com
